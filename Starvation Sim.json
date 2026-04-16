@@ -1501,8 +1501,8 @@
               "useMultipleDirections": false,
               "directions": [
                 {
-                  "looping": false,
-                  "timeBetweenFrames": 0.2,
+                  "looping": true,
+                  "timeBetweenFrames": 0.65,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
@@ -1542,7 +1542,7 @@
                     },
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "hexLavaSea01.png",
+                      "image": "hexLavaSea02.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -1578,7 +1578,7 @@
                     },
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "hexLavaSea02.png",
+                      "image": "hexLavaSea01.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -5109,6 +5109,7 @@
               ]
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -5136,6 +5137,7 @@
               ]
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -5193,15 +5195,6 @@
               "object": "Lava",
               "conditions": [],
               "actions": [
-                {
-                  "type": {
-                    "value": "AnimatableCapability::AnimatableBehavior::PauseAnimation"
-                  },
-                  "parameters": [
-                    "Lava",
-                    "Animation"
-                  ]
-                },
                 {
                   "type": {
                     "value": "ChangeSprite"
@@ -5365,6 +5358,82 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "// =====================================",
+            "// LAVA HEAT PULSE - STRONGER TEST VERSION",
+            "// Put in a normal JavaScript event that runs every frame",
+            "// =====================================",
+            "",
+            "const lavaObjects = runtimeScene.getObjects(\"Lava\");",
+            "",
+            "// Scene time in seconds",
+            "const t = runtimeScene.getTimeManager().getTimeFromStart() / 1000;",
+            "",
+            "// Tune these",
+            "const speed = 2.4;     // faster so motion is obvious",
+            "const qOffset = 0.9;",
+            "const rOffset = 0.55;",
+            "",
+            "for (let i = 0; i < lavaObjects.length; i++) {",
+            "  const lava = lavaObjects[i];",
+            "  if (!lava) continue;",
+            "",
+            "  const vars = lava.getVariables();",
+            "  const q = vars.get(\"HexQ\").getAsNumber();",
+            "  const r = vars.get(\"HexR\").getAsNumber();",
+            "  const distance = vars.get(\"Distance\").getAsNumber();",
+            "",
+            "  let baseR = 220;",
+            "  let baseG = 80;",
+            "  let baseB = 20;",
+            "  let strength = 30;",
+            "",
+            "  if (distance === 3) {",
+            "    baseR = 255;",
+            "    baseG = 120;",
+            "    baseB = 30;",
+            "    strength = 55;",
+            "  } else if (distance === 2) {",
+            "    baseR = 235;",
+            "    baseG = 95;",
+            "    baseB = 22;",
+            "    strength = 40;",
+            "  } else {",
+            "    baseR = 190;",
+            "    baseG = 60;",
+            "    baseB = 18;",
+            "    strength = 25;",
+            "  }",
+            "",
+            "  const phase = t * speed + q * qOffset + r * rOffset;",
+            "",
+            "  // Main wave",
+            "  const pulse = (Math.sin(phase) + 1) * 0.5;",
+            "",
+            "  // Extra wobble",
+            "  const pulse2 = (Math.sin(phase * 1.7 + 2.1) + 1) * 0.5;",
+            "",
+            "  const rCol = Math.max(0, Math.min(255, Math.round(baseR + strength * pulse)));",
+            "  const gCol = Math.max(0, Math.min(255, Math.round(baseG + strength * 0.7 * pulse2)));",
+            "  const bCol = Math.max(0, Math.min(255, Math.round(baseB + strength * 0.15 * pulse)));",
+            "",
+            "  lava.setColor(`${rCol};${gCol};${bCol}`);",
+            "",
+            "  // Optional slight shimmer",
+            "  lava.setOpacity(230 + Math.round(pulse2 * 25));",
+            "}"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
         },
         {
           "type": "BuiltinCommonInstructions::Comment",
