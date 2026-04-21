@@ -1130,11 +1130,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-<<<<<<< HEAD
-        "zoomFactor": 0.17576384491805602,
-=======
-        "zoomFactor": 0.41630252177333954,
->>>>>>> d77006f673e3cdc993093af8186a3cee3d061cd6
+        "zoomFactor": 0.0935990520402283,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -1286,86 +1282,6 @@
           "customSize": false,
           "height": 0,
           "keepRatio": true,
-          "layer": "UI",
-          "name": "NPC_Direction_Text",
-          "persistentUuid": "9cc34d8d-566b-4521-8afc-0e1e5676ffa6",
-          "width": 0,
-          "x": 0,
-          "y": 0,
-          "zOrder": 0,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "UI",
-          "name": "NPC_Health_Text",
-          "persistentUuid": "eff7f7ac-5fd2-49fa-8f22-c596b0e3af44",
-          "width": 0,
-          "x": 0,
-          "y": 0,
-          "zOrder": 0,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "UI",
-          "name": "Button_Action1",
-          "persistentUuid": "290958a0-3eb2-40d3-a4ef-9c606de9a119",
-          "width": 0,
-          "x": 0,
-          "y": 0,
-          "zOrder": 0,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "UI",
-          "name": "Button_Action2",
-          "persistentUuid": "46fbacaf-8d0b-4a41-956d-831872c7db81",
-          "width": 0,
-          "x": 0,
-          "y": 50,
-          "zOrder": 0,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "UI",
-          "name": "Button_Close",
-          "persistentUuid": "c1e4ae8c-793c-4339-a4fa-40a3009eb5d3",
-          "width": 0,
-          "x": 0,
-          "y": 100,
-          "zOrder": 0,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
           "layer": "",
           "name": "NPC_UI_Background",
           "persistentUuid": "9f56d3e0-a8d4-4511-852d-46583e1eb4bd",
@@ -1422,10 +1338,10 @@
           "effects": [],
           "behaviors": [
             {
-              "cost": 10,
-              "impassable": false,
               "name": "PathfindingObstacle",
-              "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+              "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+              "cost": 10,
+              "impassable": false
             }
           ],
           "animations": [
@@ -1872,10 +1788,10 @@
           "effects": [],
           "behaviors": [
             {
-              "cost": 10,
-              "impassable": true,
               "name": "PathfindingObstacle",
-              "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+              "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+              "cost": 10,
+              "impassable": true
             }
           ],
           "animations": [
@@ -5348,21 +5264,9 @@
           "behaviors": [],
           "animations": [
             {
-<<<<<<< HEAD
               "name": "NewSprite",
               "useMultipleDirections": false,
               "directions": [
-=======
-              "name": "Health",
-              "type": "number",
-              "value": 100
-            },
-            {
-              "folded": true,
-              "name": "Directions",
-              "type": "array",
-              "children": [
->>>>>>> d77006f673e3cdc993093af8186a3cee3d061cd6
                 {
                   "looping": false,
                   "metadata": "{\"pskl\":{}}",
@@ -5473,15 +5377,8 @@
               "gridOffsetX": 0,
               "gridOffsetY": 0,
               "maxSpeed": 200,
-<<<<<<< HEAD
-              "name": "Pathfinding",
               "rotateObject": false,
-              "smoothingMaxCellGap": 1,
-              "type": "PathfindingBehavior::PathfindingBehavior"
-=======
-              "rotateObject": true,
               "smoothingMaxCellGap": 1
->>>>>>> d77006f673e3cdc993093af8186a3cee3d061cd6
             }
           ],
           "animations": [
@@ -5534,310 +5431,6 @@
               ]
             }
           ]
-        },
-        {
-          "assetStoreId": "",
-          "bold": false,
-          "italic": false,
-          "name": "NPC_Direction_Text",
-          "persistentUuid": "c9bd0fc9-10e9-4f47-a979-a1e2920e8461",
-          "smoothed": true,
-          "type": "TextObject::Text",
-          "underlined": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "string": "Text",
-          "font": "",
-          "textAlignment": "left",
-          "characterSize": 20,
-          "color": {
-            "b": 33,
-            "g": 211,
-            "r": 126
-          },
-          "content": {
-            "bold": false,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
-            "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
-            "shadowAngle": 90,
-            "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
-            "shadowDistance": 4,
-            "shadowOpacity": 127,
-            "smoothed": true,
-            "underlined": false,
-            "text": "Text",
-            "font": "",
-            "textAlignment": "left",
-            "verticalTextAlignment": "top",
-            "characterSize": 20,
-            "lineHeight": 0,
-            "color": "126;211;33"
-          }
-        },
-        {
-          "assetStoreId": "",
-          "bold": false,
-          "italic": false,
-          "name": "NPC_Health_Text",
-          "persistentUuid": "6668d4d6-3150-4c0b-a46d-16e532b2d3ec",
-          "smoothed": true,
-          "type": "TextObject::Text",
-          "underlined": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "string": "Text",
-          "font": "",
-          "textAlignment": "left",
-          "characterSize": 20,
-          "color": {
-            "b": 33,
-            "g": 211,
-            "r": 126
-          },
-          "content": {
-            "bold": false,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
-            "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
-            "shadowAngle": 90,
-            "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
-            "shadowDistance": 4,
-            "shadowOpacity": 127,
-            "smoothed": true,
-            "underlined": false,
-            "text": "Text",
-            "font": "",
-            "textAlignment": "left",
-            "verticalTextAlignment": "top",
-            "characterSize": 20,
-            "lineHeight": 0,
-            "color": "126;211;33"
-          }
-        },
-        {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "4333048f8bf249a55be1a172a7f3fe586fe8583938666f67ec699b43b2145c43",
-          "name": "Button_Action1",
-          "persistentUuid": "aff7bb9d-bf9f-4b0a-bbab-549334d8da9a",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "ButtonFSM",
-              "type": "ButtonStates::ButtonFSM",
-              "ShouldCheckHovering": true,
-              "State": "Idle",
-              "TouchId": 0,
-              "TouchIsInside": false,
-              "MouseIsInside": false,
-              "Index": 2.0247e-320
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": true,
-                  "timeBetweenFrames": 0.025,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "B Button.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 32,
-                            "y": 0
-                          },
-                          {
-                            "x": 32,
-                            "y": 32
-                          },
-                          {
-                            "x": 0,
-                            "y": 32
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "e17754839536e3a656f70f192f5f653e0f0cd1c03010c7558cace7528a68cc32",
-          "name": "Button_Action2",
-          "persistentUuid": "22f7c410-c0f7-4056-be82-264668e5790f",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "ButtonFSM",
-              "type": "ButtonStates::ButtonFSM",
-              "ShouldCheckHovering": true,
-              "State": "Idle",
-              "TouchId": 0,
-              "TouchIsInside": false,
-              "MouseIsInside": false,
-              "Index": 2.0247e-320
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": true,
-                  "timeBetweenFrames": 0.025,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "B Button.png2",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 32,
-                            "y": 0
-                          },
-                          {
-                            "x": 32,
-                            "y": 32
-                          },
-                          {
-                            "x": 0,
-                            "y": 32
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "f76512029b0f1b0ad0993194e9ca0eaf81f312fb0afdf7db9bbd573b47df0333",
-          "name": "Button_Close",
-          "persistentUuid": "698572c4-5941-4823-ac4f-3abae55aac2b",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "ButtonFSM",
-              "type": "ButtonStates::ButtonFSM",
-              "ShouldCheckHovering": true,
-              "State": "Idle",
-              "TouchId": 0,
-              "TouchIsInside": false,
-              "MouseIsInside": false,
-              "Index": 2.0247e-320
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": true,
-                  "timeBetweenFrames": 0.025,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "Close button.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 48,
-                            "y": 0
-                          },
-                          {
-                            "x": 48,
-                            "y": 48
-                          },
-                          {
-                            "x": 0,
-                            "y": 48
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
         }
       ],
       "objectsFolderStructure": {
@@ -5880,29 +5473,10 @@
             "objectName": "Locked"
           },
           {
-<<<<<<< HEAD
             "objectName": "CentreHex"
           },
           {
             "objectName": "PlayerMarker"
-=======
-            "objectName": "NPC"
-          },
-          {
-            "objectName": "NPC_Direction_Text"
-          },
-          {
-            "objectName": "NPC_Health_Text"
-          },
-          {
-            "objectName": "Button_Action1"
-          },
-          {
-            "objectName": "Button_Action2"
-          },
-          {
-            "objectName": "Button_Close"
->>>>>>> d77006f673e3cdc993093af8186a3cee3d061cd6
           }
         ]
       },
@@ -5920,6 +5494,7 @@
           "comment": "Preload"
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -6225,6 +5800,7 @@
           ]
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -6645,415 +6221,6 @@
                 "Pixel_FX",
                 "-",
                 "0.4"
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01KPQ3F4WBF5A39EG0D8QZRGBD",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "DepartScene"
-              },
-              "parameters": [
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "NPC_Direction_Text"
-              ]
-            },
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "NPC_Health_Text"
-              ]
-            },
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "Button_Action1"
-              ]
-            },
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "Button_Action2"
-              ]
-            },
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "Button_Close"
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01KPQ3FDCACNP8K3FRQG916AZ4",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "ButtonStates::ButtonFSM::IsClicked"
-              },
-              "parameters": [
-                "NPC",
-                "ButtonFSM",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Show"
-              },
-              "parameters": [
-                "NPC_Direction_Text",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Show"
-              },
-              "parameters": [
-                "NPC_Health_Text",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Show"
-              },
-              "parameters": [
-                "Button_Action1",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Show"
-              },
-              "parameters": [
-                "Button_Action2",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Show"
-              },
-              "parameters": [
-                "Button_Close",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "UI_Active_",
-                "True",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01KPQ3FM8TB2F4ATD7P91VQC67",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "ButtonStates::ButtonFSM::IsClicked"
-              },
-              "parameters": [
-                "Button_Close",
-                "ButtonFSM",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "NPC_Direction_Text"
-              ]
-            },
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "NPC_Health_Text"
-              ]
-            },
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "Button_Action1"
-              ]
-            },
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "Button_Action2"
-              ]
-            },
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "Button_Close"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "UI_Active_",
-                "False",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01KPQ3FTZ19XKQ7MZF8NAG99M3",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "MouseButtonFromTextPressed"
-              },
-              "parameters": [
-                "",
-                "\"Left\""
-              ]
-            },
-            {
-              "type": {
-                "inverted": true,
-                "value": "IsCursorOnObject"
-              },
-              "parameters": [
-                "Button_Action1",
-                "Button_Action1",
-                "",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "inverted": true,
-                "value": "IsCursorOnObject"
-              },
-              "parameters": [
-                "Button_Action2",
-                "Button_Action2",
-                "",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "inverted": true,
-                "value": "IsCursorOnObject"
-              },
-              "parameters": [
-                "Button_Close",
-                "Button_Close",
-                "",
-                "",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "BooleanVariable"
-              },
-              "parameters": [
-                "UI_Active_",
-                "True",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "NPC_Direction_Text"
-              ]
-            },
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "NPC_Health_Text"
-              ]
-            },
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "Button_Action1"
-              ]
-            },
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "Button_Action2"
-              ]
-            },
-            {
-              "type": {
-                "value": "Hide"
-              },
-              "parameters": [
-                "Button_Close"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "UI_Active_",
-                "False",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01KPQ3GCY7E436N5XGCW3QCFDJ",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BooleanVariable"
-              },
-              "parameters": [
-                "UI_Active_",
-                "True",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "NPC_Direction_Text",
-                "Text",
-                "=",
-                "\"Direction: X: \" + ToString(NPC.Directions[0][0]) + \", Y: \" + ToString(NPC.Directions[0][1])"
-              ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "NPC_Health_Text",
-                "Text",
-                "=",
-                "\"Health: \" + ToString(NPC.Health)"
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01KPQ3H3VT75Z9Q7MTQBKCXE7T",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "ButtonStates::ButtonFSM::IsClicked"
-              },
-              "parameters": [
-                "Button_Action1",
-                "ButtonFSM",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "Test",
-                "Text",
-                "=",
-                "\"Button 1 clicked!\""
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01KPQ3H9QZ12MP73T1531TT3R2",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "ButtonStates::ButtonFSM::IsClicked"
-              },
-              "parameters": [
-                "Button_Action2",
-                "ButtonFSM",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "Test",
-                "Text",
-                "=",
-                "\"Button 2 clicked!\""
               ]
             }
           ]
