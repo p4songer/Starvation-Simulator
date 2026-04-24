@@ -10487,7 +10487,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "State 0 = no action\nState 1 = Walking\nState 2 = Running "
+          "comment": "State 0 = no action\nState 1 = Walking\nState 2 = Running \nState 3 = Attacking"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -10940,9 +10940,109 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Logic for attacking. Right now, just deletes a random player when a different player is close enough."
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
+          "conditions": [
+            {
+              "type": {
+                "value": "RepeatEveryXSeconds::Repeat"
+              },
+              "parameters": [
+                "",
+                "\"Attacks\"",
+                "0.3",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "// Delete one random PlayerMarker from each close pair",
+                "(function(runtimeScene) {",
+                "  const markers = runtimeScene.getObjects(\"PlayerMarker\");",
+                "  if (!markers || markers.length < 2) return;",
+                "",
+                "  const threshold = 200;",
+                "  const thresholdSq = threshold * threshold;",
+                " ",
+                "  // Helper to get persistent UUID safely",
+                "  function getUuid(obj) {",
+                "    return (typeof obj.getPersistentUuid === \"function\") ? obj.getPersistentUuid() : null;",
+                "  }",
+                "",
+                "  // Collect deletion UUIDs (to deduplicate) and direct object refs as fallback",
+                "  const toDeleteUuids = new Set();",
+                "  const toDeleteObjs = new Set();",
+                "",
+                "  // Build list of close pairs (i < j ensures each pair processed once)",
+                "  for (let i = 0; i < markers.length; i++) {",
+                "    const a = markers[i];",
+                "    const ax = a.getX();",
+                "    const ay = a.getY();",
+                "",
+                "    for (let j = i + 1; j < markers.length; j++) {",
+                "      const b = markers[j];",
+                "      const dx = b.getX() - ax;",
+                "      const dy = b.getY() - ay;",
+                "      const d2 = dx * dx + dy * dy;",
+                "",
+                "      if (d2 <= thresholdSq) {",
+                "        // Pair is close enough — pick one at random to delete",
+                "        const pick = Math.floor(Math.random() * 2); // 0 or 1",
+                "        if (pick === 0) {",
+                "          const uuid = getUuid(a);",
+                "          if (uuid) toDeleteUuids.add(uuid);",
+                "          else toDeleteObjs.add(a);",
+                "        } else {",
+                "          const uuid = getUuid(b);",
+                "          if (uuid) toDeleteUuids.add(uuid);",
+                "          else toDeleteObjs.add(b);",
+                "        }",
+                "      }",
+                "    }",
+                "  }",
+                "",
+                "  // Execute deletions by UUID first (preferred), then by object refs",
+                "  if (toDeleteUuids.size > 0) {",
+                "    const list = runtimeScene.getObjects(\"PlayerMarker\");",
+                "    for (let k = 0; k < list.length; k++) {",
+                "      const cand = list[k];",
+                "      const cu = getUuid(cand);",
+                "      if (cu && toDeleteUuids.has(cu)) {",
+                "        try { cand.deleteFromScene(runtimeScene); } catch (e) {}",
+                "        // remove from set to avoid double work",
+                "        toDeleteUuids.delete(cu);",
+                "      }",
+                "    }",
+                "  }",
+                "",
+                "  // Delete any remaining object refs (those without UUIDs)",
+                "  toDeleteObjs.forEach(function(obj) {",
+                "    try { obj.deleteFromScene(runtimeScene); } catch (e) {}",
+                "  });",
+                "",
+                "})(runtimeScene);",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ]
         }
       ]
     },
